@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite
+# Vite + Vue 3 + TypeScript + ESLint + Prettier Repository Template
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
@@ -46,23 +46,24 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 
 1. install `npm i -D eslint-plugin-prettier`
 2. enable `eslint-plugin-prettier`
-  ```
-  // .eslintrc.cjs add below config
-  plugins: ['prettier'],
-  rules: {
-    // 违反 Prettier 的规则就报 error
-    'prettier/prettier': 'error',
-  },
-  ```
+    ```
+    // .eslintrc.cjs add below config
+    plugins: ['prettier'],
+    rules: {
+      // 违反 Prettier 的规则就报 error
+      'prettier/prettier': 'error',
+    },
+    ```
 ## eslint-config-prettier
 
 - Turns off all rules that are unnecessary or might conflict with Prettier. 关闭所有不必要的或可能与 Prettier 冲突的规则。即 eslint 和 prettier 的规则发生冲突时，关闭 eslint 规则。
 
 1. install `npm i -D eslint-config-prettier`
 2. enabled `eslint-config-prettier`
-  ```
-  extends: [..., 'prettier'], (Make sure to put it last, so it gets the chance to override other configs.)
-  ```
+    ```
+    extends: [..., 'prettier'], 
+    // (Make sure to put it last, so it gets the chance to override other configs.)
+    ```
 
 ## eslint-plugin-vue
 
@@ -70,21 +71,21 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 
 1. install `npm i -D eslint-plugin-vue`
 2. enable `eslint-plugin-vue`
-  ```
-  // .eslintrc.cjs update below config
-  module.exports = {
-    extends: [
-      // add more generic rulesets here, such as:
-      // 'eslint:recommended',
-      'plugin:vue/vue3-recommended',
-      // 'plugin:vue/recommended' // Use this if you are using Vue.js 2.x.
-    ],
-    rules: {
-      // override/add rules settings here, such as:
-      // 'vue/no-unused-vars': 'error'
+    ```
+    // .eslintrc.cjs update below config
+    module.exports = {
+      extends: [
+        // add more generic rulesets here, such as:
+        // 'eslint:recommended',
+        'plugin:vue/vue3-recommended',
+        // 'plugin:vue/recommended' // Use this if you are using Vue.js 2.x.
+      ],
+      rules: {
+        // override/add rules settings here, such as:
+        // 'vue/no-unused-vars': 'error'
+      }
     }
-  }
-  ```
+    ```
 
 ## vue-eslint-parser @typescript-eslint/parser
 
@@ -92,23 +93,24 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 
 1. install `npm i -D vue-eslint-parser @typescript-eslint/parser`
 2. enabled
-  ```
-  parser: 'vue-eslint-parser',
-  parserOptions: {
-    parser: {
-      // Script parser for `<script>`
-      js: 'espree',
+    ```
+    // .eslintrc.cjs update below config
+    parser: 'vue-eslint-parser',
+    parserOptions: {
+      parser: {
+        // Script parser for `<script>`
+        js: 'espree',
 
-      // Script parser for `<script lang="ts">`
-      ts: '@typescript-eslint/parser',
+        // Script parser for `<script lang="ts">`
+        ts: '@typescript-eslint/parser',
 
-      // Script parser for vue directives (e.g. `v-if=` or `:attribute=`)
-      // and vue interpolations (e.g. `{{variable}}`).
-      // If not specified, the parser determined by `<script lang ="...">` is used.
-      '<template>': 'espree',
+        // Script parser for vue directives (e.g. `v-if=` or `:attribute=`)
+        // and vue interpolations (e.g. `{{variable}}`).
+        // If not specified, the parser determined by `<script lang ="...">` is used.
+        '<template>': 'espree',
+      },
     },
-  },
-  ```
+    ```
 
 ## StyleLint
 
@@ -116,23 +118,27 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
    - stylelint-prettier 类似 eslint-plugin-prettier, 启用该插件来加载 prettier 的 style 代码风格和启用自动修复功能，如 .css, style。
    - stylelint-config-prettier, 关闭与 prettier 规则冲突的 stylelint
    - stylelint-config-standard, 推荐的规则集
-2. config new file: `stylelint.config.cjs`
-   ```
-   module.exports = {
-    "plugins": ["stylelint-prettier"],
-    "extends": [
-      "stylelint-config-standard",
-      "stylelint-config-prettier"
-    ],
-    "rules": {
-      "prettier/prettier": true
-    }
-  }
-   ```
-3. Visual Studio Code 安装扩展: `Stylelint`，开启在控制台展示 StyleLint 错误，开启保存时自动修复
 
-  ```
-  "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": true,
-  },
-  ```
+2. config new file: `stylelint.config.cjs`
+    ```
+    // stylelint.config.cjs
+    module.exports = {
+      "plugins": ["stylelint-prettier"],
+      "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-prettier"
+      ],
+      "rules": {
+        "prettier/prettier": true
+      }
+    }
+    ```
+
+3. Visual Studio Code 安装扩展: `Stylelint`，开启在控制台展示 StyleLint 错误，保存时自动修复
+
+    ```
+    // .vscode/settings.json
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true,
+    },
+    ```
