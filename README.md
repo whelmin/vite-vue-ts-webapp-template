@@ -23,7 +23,13 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 
 1. install `npm i -D eslint`
 2. config new file: `.eslintrc.cjs`
-3. Visual Studio Code 安装扩展: `ESLint`，开启在控制台展示 ESLint 错误
+3. Visual Studio Code 安装扩展: `ESLint`，开启在控制台展示 ESLint 错误， 开启保存时自动修复
+
+  ```
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  ```
 
 ## Prettier
 
@@ -36,7 +42,7 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 
 ## eslint-plugin-prettier
 
-- 使用 eslint-plugin-prettier 来加载 prettier 的代码风格和启用自动修复功能。
+- 使用 eslint-plugin-prettier 来加载 prettier 的 js 代码风格和启用自动修复功能。
 
 1. install `npm i -D eslint-plugin-prettier`
 2. enable `eslint-plugin-prettier`
@@ -101,5 +107,32 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
       // If not specified, the parser determined by `<script lang ="...">` is used.
       '<template>': 'espree',
     },
+  },
+  ```
+
+## StyleLint
+
+1. install `npm i -D stylelint stylelint-prettier stylelint-config-prettier stylelint-config-standard`
+   - stylelint-prettier 类似 eslint-plugin-prettier, 启用该插件来加载 prettier 的 style 代码风格和启用自动修复功能，如 .css, style。
+   - stylelint-config-prettier, 关闭与 prettier 规则冲突的 stylelint
+   - stylelint-config-standard, 推荐的规则集
+2. config new file: `stylelint.config.cjs`
+   ```
+   module.exports = {
+    "plugins": ["stylelint-prettier"],
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-prettier"
+    ],
+    "rules": {
+      "prettier/prettier": true
+    }
+  }
+   ```
+3. Visual Studio Code 安装扩展: `Stylelint`，开启在控制台展示 StyleLint 错误，开启保存时自动修复
+
+  ```
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
   },
   ```

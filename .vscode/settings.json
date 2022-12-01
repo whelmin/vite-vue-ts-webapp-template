@@ -1,0 +1,18 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "stylelint.stylelintPath": "./node_modules/stylelint",
+  "prettier.prettierPath": "./node_modules/prettier",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true, // 保存文件时，自动启用 stylelint 格式化文件
+    "source.fixAll.eslint": true, // 保存文件时，自动启用 stylelint 格式化文件
+  },
+  "editor.tabSize": 2
+}
