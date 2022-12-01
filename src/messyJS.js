@@ -1,8 +1,3 @@
-// 需要报 for-direction Linter error
-for (let i = 0; i < 10; i--) {
-  console.log(i);
-}
-
 // 需要报 max-len Linter error
 const longFunction = (somethingVeryLong1) => {
   console.log(somethingVeryLong1);
