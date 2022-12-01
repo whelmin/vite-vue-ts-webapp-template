@@ -14,3 +14,36 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
 
 You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+
+## ESLint
+
+- Formatting rules: 代码风格规则。
+- Code-quality rules: 代码质量规则。
+
+1. install `npm i -D eslint`
+2. config new file: `.eslintrc.cjs`
+3. auto check: Visual Studio Code 安装扩展
+
+## Prettier
+
+- 用于格式化代码，支持各种语言，属于 opinionated
+
+1. install `npm i -D prettier`
+2. config new file: `.prettierrc.json` `.prettierignore`
+
+安装了 eslint 和 prettier 后，由于 eslint 的格式化能力很弱，比如不规律空格、不规律换行都检测不出来，所以安装 eslint-plugin-prettier 来加载 prettier 的代码风格和自动修复功能。
+
+
+
+## eslint-plugin-prettier
+
+1. install `npm i -D eslint-plugin-prettier`
+2. enable eslint-plugin-prettier
+   ```
+    // .eslintrc.cjs add below config
+    plugins: ['prettier'],
+    rules: {
+      // 违反 Prettier 的规则就报 error
+      'prettier/prettier': 'error',
+    },
+   ```
