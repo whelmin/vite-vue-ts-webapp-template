@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/70522494/multiple-entry-points-in-vite
