@@ -1,7 +1,7 @@
 {
   "name": "vite-vue-ts-webapp-template",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "start": "npm run dev",
@@ -11,6 +11,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "pinia": "^2.0.33",
     "vue": "^3.2.41"
   },
   "devDependencies": {

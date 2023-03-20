@@ -2,6 +2,32 @@
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
+## 技术栈
+
+- Vue 3: The Progressive JavaScript Framework
+- Pinia: The intuitive store for Vue TODO. 加到项目中
+- Vite: Next Generation Frontend Tooling, Get ready for a development environment that can finally catch up with you.
+- TypeScript
+- Vue-router TODO. 加到项目中
+
+## 项目代码风格管理
+
+- eslint
+- stylelint
+- prettier
+- commitlint // TODO. add README
+- husky
+- lint-staged
+
+## Env
+
+- node v16.19.1
+- npm 8.19.3
+- TODO. 加到项目中，脚本检测 env 是否正确
+- TODO. 构建多页面应用配置
+- TODO. 版本概念
+- TODO. CICD
+
 ## Recommended IDE Setup
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
