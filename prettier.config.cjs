@@ -3,6 +3,6 @@ module.exports = {
   semi: true,
   trailingComma: 'es5',
   bracketSameLine: true,
-  printWidth: 160,
+  printWidth: 80,
   arrowParens: 'always',
 };
