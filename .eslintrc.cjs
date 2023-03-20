@@ -27,19 +27,13 @@ module.exports = {
   },
   rules: {
     // 违反 Prettier 的规则就报 error
-    'prettier/prettier': 'error',
-    // override eslint-plugin-vue/vue3-recommended some rule
-    'vue/max-attributes-per-line': [
+    'prettier/prettier': [
       'error',
       {
-        singleline: {
-          max: 3,
-        },
-        multiline: {
-          max: 2,
-        },
+        trailingComma: 'es5',
       },
     ],
+    // override eslint-plugin-vue/vue3-recommended some rule
     'vue/first-attribute-linebreak': [
       'error',
       {
