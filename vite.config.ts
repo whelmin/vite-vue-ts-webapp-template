@@ -21,6 +21,9 @@ export default defineConfig({
           new URL('./src/app-changba/activity2/index.html', import.meta.url)
         ),
       },
+      output: {
+        entryFileNames: 'entry-[name].js',
+      },
     },
   },
 });
